@@ -6,12 +6,14 @@ package com.zipcodewilmington;
 public class PersonHandler {
     private final Person[] personArray;
 
+
     public PersonHandler(Person[] personArray) {
         this.personArray = personArray;
     }
 
     public String whileLoop() {
         String result = "";
+        Integer counter = 0;
         // create a `counter`
         // while `counter` is less than length of array
             // begin loop
@@ -20,6 +22,13 @@ public class PersonHandler {
                 // get `string Representation` of `currentPerson`
                 // append `stringRepresentation` to `result` variable
 
+        while(counter < personArray.length){
+            Person person = new Person(personArray[counter].getFirstName(),personArray[counter].getLastName() );
+
+            result += person.toString();
+
+            counter++;
+        }
             // end loop
         return result;
     }
@@ -38,6 +47,12 @@ public class PersonHandler {
                 // get `string Representation` of `currentPerson`
                 // append `stringRepresentation` to `result` variable
             // end loop
+        for(int i = 0; i < personArray.length; i++){
+            Person person = new Person(personArray[i].getFirstName(),personArray[i].getLastName() );
+
+            result += person.toString();
+        }
+
 
         return result;
     }
@@ -54,6 +69,9 @@ public class PersonHandler {
                 // get `string Representation` of `currentPerson`
                 // append `stringRepresentation` to `result` variable
             // end loop
+        for(Person i : personArray){
+            result += i.toString();
+        }
 
         return result;
     }
